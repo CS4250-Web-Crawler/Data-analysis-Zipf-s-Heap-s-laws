@@ -1,5 +1,3 @@
-package wordStructure;
-
 public class graphNode {
 	private int vocab;
 	private int words;
