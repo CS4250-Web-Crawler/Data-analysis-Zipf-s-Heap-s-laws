@@ -28,14 +28,15 @@ public class WordCount {
                 wordCounts.put(next, 1);
                 //**NEW** incrementing word count each time a new word is added
                 totalWords++;
+              //**NEW** create a node for a graph with the total word count at the time the vocabulary increased
+                Analysis.addGraphNode(wordCounts.size(), totalWords);
             } else {
                 // else if the word already has a mapping, then get the current value associated with that word (key) and increase value by 1
                 wordCounts.put(next, wordCounts.get(next) + 1);
                 totalWords++;
-                //**NEW** create a node for a graph with the total word count at the time the vocabulary increased
-                Analysis.addGraphNode(wordCounts.size(), totalWords);
                 
                 
+   
             }
         }
 

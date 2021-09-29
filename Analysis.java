@@ -24,6 +24,10 @@ public class Analysis {
 	public static void Heaps(LinkedHashMap wordMap)	{
 		
 		//add nodes from nodeArray to graphing solution
+		//example output
+		for (int tempGraphIndex = 0; nodeArray[tempGraphIndex] != null; tempGraphIndex++) {
+			System.out.println("Current vocabulary count: " + nodeArray[tempGraphIndex].getVocabSize());
+		}
 		
 	}
 	
