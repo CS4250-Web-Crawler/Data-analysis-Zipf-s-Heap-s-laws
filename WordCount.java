@@ -1,5 +1,3 @@
-package wordStructure;
-
 import java.util.*;
 import java.io.*;
 
