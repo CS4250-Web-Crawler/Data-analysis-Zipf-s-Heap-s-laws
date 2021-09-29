@@ -1,4 +1,3 @@
-package wordStructure;
 import java.util.*;
 
 public class Analysis {
