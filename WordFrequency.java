@@ -34,6 +34,7 @@ public class WordFrequency {
             } else {
                 // else if the word already has a mapping, then get the current value associated with that word (key) and increase value by 1
                 wordCounts.put(next, wordCounts.get(next) + 1);
+                totalWords++;
             }
         }
 
