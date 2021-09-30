@@ -46,6 +46,6 @@ public class WordCount {
 
         //System.out.println("Reverse Sorted Map   : " + wordCounts);
         Analysis.setInitials(wordCounts.size(), totalWords);
-        Analysis.Heaps(wordCounts);
+        Analysis.Heaps(wordCounts); 
     }
 }
