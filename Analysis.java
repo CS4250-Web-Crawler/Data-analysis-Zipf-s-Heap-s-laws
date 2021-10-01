@@ -1,3 +1,6 @@
+package wordStructure;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class Analysis {
@@ -19,16 +22,20 @@ public class Analysis {
 		wordRank*(wordFrequency/totalWords);
 		*/
 	}
-		
-	public static void Heaps(LinkedHashMap wordMap)	{
+	
+	//add nodes from nodeArray to graphing solution
+	public static void Heaps(LinkedHashMap wordMap)	throws IOException {
 		
 		//add nodes from nodeArray to graphing solution
-		//example output
-		for (int tempGraphIndex = 0; nodeArray[tempGraphIndex] != null; tempGraphIndex++) {
-			System.out.println("Current vocabulary count: " + nodeArray[tempGraphIndex].getVocabSize());
+		//OutputGraph.toXML(nodeArray);
+		FileWriter output
+	    = new FileWriter("TestCSVFile.txt");
+		output.write("Vocabulary Size, Total Word Count" + '\n');
+		for (int index = 0; index < Analysis.arraySize(); index++) {
+			output.write(nodeArray[index].getVocabSize() + "," + nodeArray[index].getWordCount() + "," + '\n');
 		}
-		
-	}
+		output.close();
+	}	
 	
 	public static int getTotalWords() {
 		return totalWords;
@@ -42,5 +49,10 @@ public class Analysis {
 			nodeArray = Arrays.copyOf(nodeArray, nodeArray.length*2);
 		}
 	}
-
+	public static graphNode[] getGraphArray() {
+		return nodeArray;
+	}
+	public static int arraySize() {
+		return graphIndex;
+	}
 }
