@@ -14,13 +14,16 @@ public class Analysis {
 		uniqueWords = vocabTotal;
 	}
 	
-	public static void Zipfs(LinkedHashMap wordMap) {
-		//find amount of unique words in the hashMap
-		uniqueWords =wordMap.size();
-		
-		/*zipf's law
-		wordRank*(wordFrequency/totalWords);
-		*/
+	public static void Zipfs(LinkedHashMap<String, Integer> wordMap) throws IOException {
+		FileWriter output
+	    = new FileWriter("ZipfsCSVFile.txt");
+		output.write("Word ranking, word frequency" + '\n');
+		int ranking = 1;
+		for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
+			output.write(ranking + "," + entry.getValue() + "," + '\n');
+			ranking++;
+        }
+		output.close();
 	}
 	
 	//add nodes from nodeArray to graphing solution
@@ -29,7 +32,7 @@ public class Analysis {
 		//add nodes from nodeArray to graphing solution
 		//OutputGraph.toXML(nodeArray);
 		FileWriter output
-	    = new FileWriter("TestCSVFile.txt");
+	    = new FileWriter("HeapsCSVFile.txt");
 		output.write("Vocabulary Size, Total Word Count" + '\n');
 		for (int index = 0; index < Analysis.arraySize(); index++) {
 			output.write(nodeArray[index].getVocabSize() + "," + nodeArray[index].getWordCount() + "," + '\n');
