@@ -25,6 +25,20 @@ public class Analysis {
 		output.close();
 	}
 	
+	public static void MostCommon(LinkedHashMap<String, Integer> wordMap) throws IOException {
+		FileWriter output
+	    = new FileWriter("100MostCommon.txt");
+		int index = 1;
+		for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
+			if (index > 100) {
+				break;
+			}
+			output.write("Rank: " + index  + ". " + entry.getKey() + ", Frequency: " + entry.getValue() + '\n');
+			index++;
+        }
+		output.close();
+	}
+	
 	//add nodes from nodeArray to graphing solution
 	public static void Heaps(LinkedHashMap wordMap)	throws IOException {
 		
