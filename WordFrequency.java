@@ -55,5 +55,6 @@ public class WordFrequency {
         Analysis.setInitials(wordCounts.size(), totalWords);
         Analysis.Heaps(wordCounts);
         Analysis.Zipfs(sortedWordList);
+        Analysis.MostCommon(sortedWordList);
     }
 }
